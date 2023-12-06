@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webimg-rs
+  labels:
+    app: webimg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webimg
+  template:
+    metadata:
+      name: webimg
+      labels:
+        app: webimg
+    spec:
+      containers:
+        - name: webimg
+          image: aheroine/webimg
+          ports:
+            - containerPort: 3000

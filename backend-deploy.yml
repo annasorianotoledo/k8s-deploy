@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiimg-deploy
+  labels:
+    app: apiimg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apiimg
+  template:
+    metadata:
+      name: apiimg
+      labels:
+        app: apiimg
+    spec:
+      containers:
+        - name: apiimg
+          image: aheroine/apiimg
+          ports:
+            - containerPort: 3001

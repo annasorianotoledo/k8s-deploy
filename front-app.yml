@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webimg
+  labels:
+    app: webimg
+spec:
+  containers:
+    - name: webimg
+      image: aheroine/webimg
+      ports:
+        - containerPort: 3000
